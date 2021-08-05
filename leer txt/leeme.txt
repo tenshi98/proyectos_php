@@ -1,0 +1,2 @@
+El archivo index.php permite leer el arvo dentro de la carpeta files, 
+separar sus datos y convertirlos en una consulta valida
