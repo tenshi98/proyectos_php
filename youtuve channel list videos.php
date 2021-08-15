@@ -23,9 +23,9 @@
 			<div class="row">
 				
 				<?php
-				$Identif    = 'UCioNNjH3S7X8byCjPDEqZkA';	                //Channel_ID
-				$myApiKey   = "AIzaSyBiqkXLqrRyQejcL8cEBXxuCqSwTYMeeb4";    // Google API Key
-				$maxResults = "20";                                         // Numero de videos a mostrar
+				$Identif    = 'UCioNNjH3S7X8byCjPDEqZkA'; //Channel_ID
+				$myApiKey   = '';                         // Google API Key
+				$maxResults = '20';                       // Numero de videos a mostrar
 
 				$myChannelID  = $Identif; 
 				$myQuery      = "https://www.googleapis.com/youtube/v3/search?key=".$myApiKey."&channelId=".$myChannelID."&part=snippet,id&order=date&maxResults=".$maxResults;
