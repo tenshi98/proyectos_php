@@ -6,7 +6,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="resources/img/favicon.png">
-		<title>Template</title>
+		<title>Web Scraping Simple</title>
 		<!-- Bootstrap core CSS -->
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Estilos propios -->
@@ -17,7 +17,7 @@
 
 		<div class="container">
 			<div class="py-5 text-center">
-				<h2>Web Scraping</h2>
+				<h2>Web Scraping Simple</h2>
 			</div>
 
 			<div class="row">

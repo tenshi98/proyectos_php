@@ -6,7 +6,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="resources/img/favicon.png">
-		<title>Template</title>
+		<title>Formularios</title>
 		<!-- Bootstrap core CSS -->
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Estilos propios -->
@@ -17,48 +17,33 @@
 
 		<div class="container">
 			<div class="py-5 text-center">
-				<h2>Get Google Image</h2>
+				<h2>Formularios</h2>
 			</div>
 
 			<div class="row">
 				
-				<?php
-				function getGoogleImage($consulta, $max_img){
-					//Se da permiso para el acceso remoto
-					ini_set("allow_url_fopen", 1);
-					//se verifica si el permiso fue concedido
-					if( ini_get('allow_url_fopen') ) {
-						//Direccion con la consulta a google image
-						$url = "https://www.google.com/search?q=".$consulta."&tbm=isch&source=hp&biw=1366&bih=636&ei=NWOAYIeGIpDJ1sQPjcYQ&oq=".$consulta."&gs_lcp=CgNpbWcQAzoCCAA6CAgAELEDEIMBOgUIABCxAzoECAAQE1CqHFjAlQFgo5gBaABwAHgAgAFiiAGTB5IBAjE1mAEAoAEBqgELZ3dzLXdpei1pbWc&sclient=img&ved=0ahUKEwjH9L_O8I_wAhWQpJUCHQ0jBAAQ4dUDCAY&uact=5";
-						
-						//obtengo el contenido							
-						$html = file_get_contents($url);
-						preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i',$html, $matches ); 
-						
-						//recorro
-						$i = 0;
-						
-						//recorro
-						foreach($matches as $image1){
-							foreach($image1 as $image){
-								if($i > $max_img) break;
-								//mientras tenga al menos un resultado
-								if($i>0){
-									echo '<div class="col-md-4">';
-										echo '<div class="card mb-4 box-shadow">';
-											echo $image;
-										echo '</div>';
-									echo '</div>';
-								}
-								$i++;
-							}
-						} 
-					}
-				}
-				//Busco la imagen
-				getGoogleImage('automovil+nissan+versa+rojo', 10);
-				?>
-				
+				<div class="col-md-12">
+					<form class="needs-validation" novalidate action="formularios_procesar.php" method="GET">
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label for="nombre">Nombre</label>
+								<input type="text" class="form-control" name="nombre" id="nombre" placeholder="" value="" required>
+								<div class="invalid-feedback">
+									Un nombre es requerido.
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="apellido">Apellido</label>
+								<input type="text" class="form-control" name="apellido" id="apellido" placeholder="" value="" required>
+								<div class="invalid-feedback">
+									Un apellido es requerido.
+								</div>
+							</div>
+						</div>
+						<hr class="mb-4">
+						<button class="btn btn-primary btn-lg btn-block" type="submit">Continuar</button>
+					</form>
+				</div>
 				
 			</div>
 

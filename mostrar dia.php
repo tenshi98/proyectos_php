@@ -6,7 +6,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="resources/img/favicon.png">
-		<title>Template</title>
+		<title>Mostrar dia</title>
 		<!-- Bootstrap core CSS -->
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Estilos propios -->
@@ -17,44 +17,46 @@
 
 		<div class="container">
 			<div class="py-5 text-center">
-				<h2>Youtuve channel list videos</h2>
+				<h2>Mostrar dia</h2>
 			</div>
 
 			<div class="row">
 				
 				<?php
-				$Identif    = 'UCioNNjH3S7X8byCjPDEqZkA'; //Channel_ID
-				$myApiKey   = '';                         // Google API Key
-				$maxResults = '20';                       // Numero de videos a mostrar
+				function dameTiempo(){
+					//se establece ciudad y pais de origen
+					date_default_timezone_set('America/Santiago');
+					//seleccion del dia
+					switch (date("l")){
+						case "Monday":    $dia = "Lunes";     break;
+						case "Tuesday":   $dia = "Martes";    break;
+						case "Wednesday": $dia = "Miercoles"; break;
+						case "Thursday":  $dia = "Jueves";    break;
+						case "Friday":    $dia = "Viernes";   break;
+						case "Saturday":  $dia = "Sabado";    break;
+						case "Sunday":    $dia = "Domingo";   break;
+					}
+					//seleccion del mes
+					switch(date("F")){
+						case "January":    $mes = "Enero";      break;
+						case "February":   $mes = "Febrero";    break;
+						case "March":      $mes = "Marzo";      break;
+						case "April":      $mes = "Abril";      break;
+						case "May":        $mes = "Mayo";       break;
+						case "June":       $mes = "Junio";      break;
+						case "July":       $mes = "Julio";      break;
+						case "August":     $mes = "Agosto";     break;
+						case "September":  $mes = "Septiembre"; break;
+						case "October":    $mes = "Octubre";    break;
+						case "November":   $mes = "November";   break;
+						case "December":   $mes = "Diciembre";  break;	
+					}
 
-				$myChannelID  = $Identif; 
-				$myQuery      = "https://www.googleapis.com/youtube/v3/search?key=".$myApiKey."&channelId=".$myChannelID."&part=snippet,id&order=date&maxResults=".$maxResults;
-				$videoList    = file_get_contents($myQuery);
-				$decoded      = json_decode($videoList, true);
+					echo "Hoy es ".$dia.", ".date("j")." de ".$mes." de ".date("Y");
+				}
+				dameTiempo();
+				?>
 				
-				// Recorrer respuesta
-				foreach ($decoded['items'] as $items){
-					$id           = $items['id']['videoId'];
-					$title        = $items['snippet']['title'];
-					$description  = $items['snippet']['description'];
-					$thumbnail    = $items['snippet']['thumbnails']['default']['url']; ?>
-					
-					
-					<div class="col-md-4">
-						<div class="card mb-4 box-shadow">
-							<img class="card-img-top" src="<?php echo $thumbnail; ?>" alt="<?php echo $title; ?>">
-							<div class="card-body">
-								<p class="card-text"><?php echo $description; ?></p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=<?php echo $id; ?>" title="<?php echo $title; ?>">Ver</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				<?php } ?>
 				
 			</div>
 
