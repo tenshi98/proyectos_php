@@ -1,7 +1,7 @@
 <?php
 /************************ CONFIGURACION ************************/
 //Datos
-$Archivo = 'files/logs_ardu_log_id_1.txt';       //archivo a leer
+$Archivo = 'files/log_example_1.txt';       //archivo a leer
 //verifico si ignoro los valores 999
 //	1: ignorar
 //	2: guardar los valores 999
@@ -10,7 +10,7 @@ $dis_999 = 2;
 $Tot_sensores = 72;
 /************************    VARIABLES  ************************/
 //Obtengo el id telemetria desde el nombre del archivo
-$idTelemetria = str_replace("files/logs_ardu_log_id_", '', $Archivo);
+$idTelemetria = str_replace("files/log_example_", '', $Archivo);
 $idTelemetria = str_replace(".txt", '', $idTelemetria);
 //Variables vacias
 $LastUpdateFecha = '';
