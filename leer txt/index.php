@@ -43,6 +43,7 @@ if (file_exists($Archivo)) {
 			$newDato = str_replace(" ", '&', $newDato);
 			$newDato = str_replace("%20", '', $newDato);
 			$newDato = str_replace("'", '', $newDato);
+			$newDato = str_replace(array("\r", "\n"), '', $newDato);
 			/************************************/
 			//separo lo que obtengo
 			$INT_piezas = explode("&", $newDato);
