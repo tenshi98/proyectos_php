@@ -1,13 +1,13 @@
 # Proyectos PHP
 Conjunto de pequeñas aplicaciones que hice en su momento en mis inicios para solventar algunas de las solicitudes en la creacion de software.
 
-### Uso 🚀
+## Uso 🚀
 Copiar lo que se necesite y pegarlo directamente en el proyecto.
 
 ## Licencia 📄
 Este proyecto está bajo la Licencia GPL-3.0 license - ve el archivo [LICENSE](LICENSE) para detalles
 
-### Contacto 📖
+## Contacto 📖
 Puedes contactarte conmigo a traves de cualquier de los siguientes canales:
 - [Github](https://github.com/tenshi98)
 - [Linkedin](https://www.linkedin.com/in/victor-reyes-galvez/)
